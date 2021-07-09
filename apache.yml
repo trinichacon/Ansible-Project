@@ -13,5 +13,5 @@
         enabled: True
     - name: Deploy static website
       copy:
-        src: indext.html
+        src: java-hello-world.war
         dest: /var/www/html
