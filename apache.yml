@@ -1,16 +1,14 @@
 ---
 - hosts: webservers
-  become: True
+  become: yes
+  become_user: root
+  become_method: sudo
   tasks:
-    - name: Install packages
-      yum:
-        name: "httpd"
-        state: "present"
-    - name: Start Apache server
-      service:
-        name: httpd
-        state: started
-        enabled: True
+    - name: install update (apt)
+      when: ansible_distribution == "Debian"
+      package:
+        name: apache2
+        state: latest
     - name: Deploy static website
       copy:
         src: java-hello-world.war
