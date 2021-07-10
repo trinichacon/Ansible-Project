@@ -9,7 +9,3 @@
       package:
         name: apache2
         state: latest
-    - name: Deploy static website
-      copy:
-        src: java-hello-world.war
-        dest: /var/www/html
