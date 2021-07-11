@@ -1,8 +1,8 @@
 ---
 - hosts: webservers
   become: yes
-  become_user: root
   become_method: sudo
+  remote_user: ec2-user
   tasks:
     - name: install update (apt)
       when: ansible_distribution == "Debian"
