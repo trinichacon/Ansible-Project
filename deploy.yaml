@@ -1,0 +1,12 @@
+---
+- hosts: webservers
+  become: yes
+  become_method: sudo
+  remote_user: ec2-user
+
+  tasks:
+  - name: Copy the war file hello.war as hello.war.tmp to /opt/tomcat/webapps
+    copy:
+      src: target/hello.war
+      dest: "/opt/tomcat/webapps/hello.war.tmp"
+      force: yes 
