@@ -20,8 +20,8 @@ pipeline {
         stage('Ansible Deploy') {
             steps {
                 ansiblePlaybook( 
-                    playbook: 'tomcat_deploy.yaml',
-                    inventory: 'inv.ini', 
+                    playbook: 'deploy.yaml',
+                    inventory: 'dev.inv', 
                     credentialsId: 'webservers') 
             }
         }
