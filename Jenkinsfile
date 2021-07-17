@@ -19,6 +19,8 @@ pipeline {
     
         stage('Ansible Deploy') {
             steps {
+                ansible all --list-hosts 
+
                 ansiblePlaybook( 
                     playbook: 'deploy.yaml',
                     inventory: 'dev.inv', 
