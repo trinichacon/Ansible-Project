@@ -22,7 +22,8 @@ pipeline {
                 ansiblePlaybook( 
                     playbook: 'deploy.yaml',
                     inventory: 'dev.inv', 
-                    credentialsId: 'webservers') 
+                    credentialsId: 'webservers',
+                    extras: '-vvv') 
             }
         }
     }
