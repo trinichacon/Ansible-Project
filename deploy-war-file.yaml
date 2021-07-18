@@ -5,8 +5,17 @@
   remote_user: ec2-user
 
   tasks:
-  - name: Copy the war file hello.war as hello.war.tmp to /opt/tomcat/webapps
+  - name: Copy the war file java-hello-world.war as java-hello-world.war.tmp to /opt/tomcat/webapps
     copy:
-      src: target/hello.war
-      dest: "/opt/tomcat/webapps/hello.war.tmp"
+      src: target/java-hello-world.war
+      dest: "/opt/tomcat/webapps/java-hello-world.war.tmp"
       force: yes 
+
+  - name: Remove current war file /opt/tomcat/webapps/java-hello-world.war
+    file:
+      path: "/opt/tomcat/webapps/java-hello-world.war"
+      state: absent
+
+  - name: Rename the java-hello-world.war.tmp to java-hello-world.war
+    command: "mv /opt/tomcat/webapps/java-hello-world.war.tmp /opt/tomcat/webapps/java-hello-world.war"
+    register: cmd_result
