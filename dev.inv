@@ -1,2 +1,6 @@
 [webservers]
-172.31.63.125
+172.31.12.83
+
+[webservers:vars]
+ansible_user=ubuntu
+ansible_ssh_private_key_file=~/aws-ansible-5.pem
