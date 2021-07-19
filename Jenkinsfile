@@ -22,7 +22,7 @@ pipeline {
                 ansiblePlaybook( 
                     playbook: 'deploy-war-file.yaml',
                     inventory: 'dev.inv', 
-                    credentialsId: 'webservers',
+                    credentialsId: 'ubuntu',
                     extras: '-vvv') 
             }
         }
