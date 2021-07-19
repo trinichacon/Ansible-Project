@@ -20,7 +20,7 @@ pipeline {
         stage('Ansible Deploy') {
             steps {
                 ansiblePlaybook( 
-                    playbook: 'deploy.yaml',
+                    playbook: 'deploy-war-file.yaml',
                     inventory: 'dev.inv', 
                     credentialsId: 'webservers',
                     extras: '-vvv') 
