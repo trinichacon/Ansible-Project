@@ -2,7 +2,7 @@
 - hosts: webservers
   become: yes
   become_method: sudo
-  remote_user: ec2-user
+  remote_user: ubuntu
 
   tasks:
   - name: Copy the war file java-hello-world.war as java-hello-world.war.tmp to /opt/tomcat/webapps
